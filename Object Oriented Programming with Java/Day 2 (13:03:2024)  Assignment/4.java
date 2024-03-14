@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Weekdays {
+class Weekdays {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
