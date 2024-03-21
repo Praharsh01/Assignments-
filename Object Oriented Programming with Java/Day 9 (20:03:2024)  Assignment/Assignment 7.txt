@@ -1,0 +1,249 @@
+
+1)
+class Q1{
+    public static void main(String[] args){
+        int[] array = {10,20,30,40,50,60,70,80,90};
+
+        for(int i=0; i<array.length; i++)
+        {
+            System.out.print(array[i]+" ");
+        }
+    }
+}
+
+
+2)
+class Q2{
+    public static void main(String[] args){
+        int[] array1 = {10,20,30,40,50,60,70,80,90};
+        int[] array2 = {10,20,30,40,50,70,80,90};
+
+        if (array1.length == array2.length)
+        {
+            System.out.println("Two arrays are equal.");
+        }
+        else
+        {
+            System.out.println("Two arrays are not equal.");
+        }
+    }
+}
+
+
+3)
+class Q3{
+    public static void main(String[] args){
+
+        int[] array = {1,2,3,4,5,6,7,8,9};
+        
+        int x = 7;
+
+        for (int i=0; i<array.length; i++)
+        {
+            for (int j=i+1; j<array.length; i++)
+            {
+                if (array[i]+array[j] == x)
+                {
+                    System.out.println("( " + array[i] +" , " + array[j] + " )");
+                }
+                
+            }
+        }
+       
+    }
+}
+
+
+4) 
+class Q4{
+    public static void main(String[] args){
+        int[] array = {10,20,30,40,50,60,70,80,90};
+        
+        for(int i=array.length - 1;i>=0; i--)
+        {
+            System.out.print(" " + array[i]);
+        }
+    }
+}
+
+
+5) 
+class Q5{
+    public static void main(String[] args){
+
+        int[] array = {1,2,3,4,5,6,7,8,9};
+        int largest = array[0];
+        int smallest = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < smallest) {
+                smallest = array[i];
+            }
+            if (array[i] > largest) {
+                largest = array[i];
+            }
+        }
+
+        System.out.println("Largest Number: " + largest);
+        System.out.println("Smallest Number: " + smallest);
+       
+    }
+}
+
+
+6)
+
+class Q6{
+    public static void main(String[] args){
+
+        int[] array = { 24,54,31,16,82,45,67};
+        int largest = array[0];
+        int secondLargest = array[0];
+        int thirdLargest = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > largest) {
+                thirdLargest = secondLargest;
+                secondLargest = largest;
+                largest = array[i];
+            } 
+            else if (array[i] > secondLargest && array[i] != largest) {
+                thirdLargest = secondLargest;
+                secondLargest = array[i];
+            } 
+            else if (array[i] > thirdLargest && array[i] != largest && array[i] != secondLargest) {
+                thirdLargest = array[i];
+            }
+        }
+
+        System.out.println(thirdLargest + " (" + largest + " and " + secondLargest + " are largest and second-largest number)");
+       
+    }
+}
+
+
+7)
+class Q7{
+    public static void main(String[] args){
+
+        int[] array1 = {23,60,94,3,102};
+        int[] array2 = {42,16,74};
+
+        for(int i=0; i<array1.length; i++)
+        { 
+             System.out.print(array1[i] + " ");
+            for (int j=i; j<array2.length; j++)
+            {
+                System.out.print(array2[j] + " ");
+                break;
+            }
+           
+        }
+       
+    }
+}
+
+
+8)
+class Q8 {
+    public static void main(String[] args) {
+        int[] array = {5, 14, 35, 89, 140};
+        
+        if (array.length < 3) 
+        {
+            System.out.println("No output (array has fewer than 3 integers)");
+            return;
+        }
+        else
+        {   
+            System.out.print("[ ");
+            for (int i = 0; i <= array.length - 3; i++) 
+            {
+                int average = (array[i] + array[i + 1] + array[i + 2]) / 3;
+                System.out.print(average);
+                if (i < array.length - 3) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.print(" ]");
+        }
+    }
+}
+
+
+9)
+
+class Q9 {
+    public static void main(String[] args) {
+    
+    int n = 6;
+
+       for (int i = 1; i <= n; i++) 
+       {
+            int result;
+            if (i % 2 == 0) 
+            {
+                result = i * i;
+            } 
+            else 
+            {
+                result = i * i * i;
+            }
+            System.out.print(result + " ");
+       }
+        
+    }
+}
+
+
+10) 
+class Q10 {
+    public static void main(String[] args) {
+        int[] array1 = {5, 14, 35, 90, 139};
+        int[] array2 = {88, 67, 35, 14, -12};
+        int[] array3 = {65, 14, 129, 34, 7};
+
+        checkOrder(array1);
+        checkOrder(array2);
+        checkOrder(array3);
+    }
+
+    public static void checkOrder(int[] array) {
+        if (isAscending(array)) 
+        {
+            System.out.println("Ascending Order");
+        } 
+        else if (isDescending(array)) 
+        {
+            System.out.println("Descending Order");
+        } 
+        else 
+        {
+            System.out.println("Random Order");
+        }
+    }
+
+    public static boolean isAscending(int[] array) 
+    {
+        for (int i = 0; i < array.length - 1; i++) 
+        {
+            if (array[i] > array[i + 1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isDescending(int[] array) 
+    {
+        for (int i = 0; i < array.length - 1; i++) 
+        {
+            if (array[i] < array[i + 1]) 
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
