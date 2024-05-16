@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TruthLens - Uncovering Fake News in the NewsFlow</title>
+    <link rel="stylesheet" href="SignUp.css">
+</head>
+<body>
+
+  <div class="container">
+   
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    
+    <br>
+
+    <form name="signupForm" onsubmit="return validateForm()" method="post" action="Login.html">
+
+        <label><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <label><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+        
+        <button type="submit" class="signupbtn">Sign Up</button>
+
+    </form>
+
+    <br><br>
+
+    <button type="button"> <a href="Login.html">Already have an account? Login</a></button>
+
+  </div>
+
+  <script>
+
+    function showAlert() {
+        alert("Account Created Successfully!");
+    }
+    function validateForm() {
+        var email = document.forms["signupForm"]["email"].value;
+        var password = document.forms["signupForm"]["password"].value;
+        var confirmPassword = document.forms["signupForm"]["confirmPassword"].value;
+
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+
+        // Regular expression for email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email address");
+            return false;
+        }
+
+        if (password == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+
+        // Password length validation
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long");
+            return false;
+        }
+
+        if (confirmPassword == "") {
+            alert("Confirm Password must be filled out");
+            return false;
+        }
+
+        // Password confirmation
+        if (password != confirmPassword) {
+            alert("Passwords do not match");
+            return false;
+        }
+        showAlert();
+        return true;
+    }
+</script>
+
+</body>
+</html>

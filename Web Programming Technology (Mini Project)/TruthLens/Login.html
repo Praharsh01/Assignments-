@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TruthLens - Uncovering Fake News in the NewsFlow</title>
+    <link rel="stylesheet" href="LoginCSS.css">
+</head>
+<body>
+
+    <div class="container">
+
+      <h2>Login To Your Account</h2>
+
+      <div class="imgcontainer">
+        <img src="App Icon.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <form name="loginForm" action="login.php" onsubmit="return validateForm()" method="post">
+        <label><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+            
+        <button type="submit">Login</button>
+      </form>
+    
+      <br><br>
+    
+      <button type="button"> <a href="SignUp.html" class="signupbtn">Create Account</a></button>
+      
+      <br><br>
+
+      <button type="button"> <a href="ForgotPassword.html" class="signupbtn">Forgot Password?</a></button>
+ 
+    </div>
+
+    <script>
+      function validateForm() {
+          var email = document.forms["loginForm"]["uname"].value;
+          var password = document.forms["loginForm"]["psw"].value;
+
+          if (email == "") {
+              alert("Email must be filled out");
+              return false;
+          }
+
+          if (password == "") {
+              alert("Password must be filled out");
+              return false;
+          }
+
+          return true;
+      }
+  </script>
+  
+</body>
+</html>

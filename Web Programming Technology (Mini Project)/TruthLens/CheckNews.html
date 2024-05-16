@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TruthLens - Uncovering Fake News in the NewsFlow</title>
+    <link rel="stylesheet" href="CheckNews.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="CheckNews.js"></script>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="Login.html">Sign Out</a></li>
+  <li><a href="About.html">About Us</a></li>
+  <li><a href="Contact.html">Contact Us</a></li>
+  <li><a href="CheckNews.html">Verify News</a></li>
+  <li><a href="Main.html">Home</a></li>
+</ul>
+
+<img src="App Icon.jpg" alt="App Icon" class="icon">
+
+<div class="container">
+    <h1>TruthLens</h1>
+
+    <br><br>
+
+    <textarea id="newsInput" placeholder="Enter New Here...." style="width: 700px; height:250px" required></textarea>
+
+    <br><br>
+
+    <button type="button" onclick="verifyNews()">Verify it</a></button>
+
+    <br>
+    <h3 id="result" class="other"></h3>
+
+
+</div>
+
+</body>
+</html>
